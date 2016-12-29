@@ -78,12 +78,28 @@ set wrap
 " }}}
 "{{{ Keyboard Shortcuts
 let mapleader = "\<Space>"
-nnoremap <leader>s :mksession<CR> " save session
+nnoremap <leader>k :mksession<CR> " save session
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>p :set invpaste<CR>
 nnoremap <leader>w :StripWhitespace<CR>
 nnoremap <leader>h :ToggleWhitespace<CR>
+nnoremap <leader>m :Emodel<Space>
+nnoremap <leader>c :Econtroller<Space>
+nnoremap <leader>v :Eview<Space>
+nnoremap <leader>u :Eunittest<Space>
+nnoremap <leader>f :Efunctionaltest<Space>
+nnoremap <leader>i :Eintegrationtest<Space>
+nnoremap <leader>g :Emigration<Space>
+nnoremap <leader>s :Eschema<Space>
+nnoremap <leader>e :Emailer<Space>
+nnoremap <leader>h :Ehelper<Space>
+nnoremap <leader>j :Ejavascript<Space>
+nnoremap <leader>y :Estylesheet<Space>
+nnoremap <leader>t :Etask<Space>
+nnoremap <leader>l :Elayout<Space>
+nnoremap <leader>b :Elib<Space>
+nnoremap <leader>p :Epreview<Space>
 " }}}
 "{{{ TMUX
 if exists('$TMUX')
