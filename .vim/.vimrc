@@ -3,8 +3,7 @@
 set nocompatible
 " source ~/.vimrc.before if it exists.
 if filereadable(expand("~/.vimrc.before"))
-source ~/.vimrc.before
-endif
+source ~/.vimrc.before endif
 "}}}
 
 " {{{ General Configs
@@ -18,6 +17,7 @@ set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+set virtualedit=all
 set hidden                      "Buffers in the background
 set encoding=utf-8
 syntax on                       "turn on syntax highlighting
@@ -46,8 +46,7 @@ let g:Powerline_symbols = 'fancy'
 set t_Co=256
 set fillchars+=stl:\ ,stlnc:\
 set term=xterm-256color
-set termencoding=utf-8
-"}}
+set termencoding=utf-8 "}}
 "{{{Turn Off Swap Files
 set noswapfile
 set nobackup
@@ -96,7 +95,7 @@ filetype indent on
 
 set list listchars=tab:\ \ ,trail:·   " Display tabs and trailing spaces visually
 
-set nowrap                    "Don't wrap lines
+set nowrap                    "Dont wrap lines
 set linebreak                 "Wrap lines at convenient points
 "}}}
 
@@ -128,11 +127,11 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-
 " Open NERDTree by default
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 nnoremap <leader>d :NERDTreeToggle<CR>
+"nnoremap <leader>f :NERDTreeFind<CR>
 
 " == Highlights ==
 nmap <leader><CR> :nohlsearch<cr>
@@ -174,25 +173,3 @@ let g:tmux_navigator_disable_when_zoomed = 1
 nmap <leader>np :NR<CR>
 nmap <leader>nw :NW<CR>
 "}}
-"{{{ CommandT Settings
-" Refresh the current list of files
-map <leader>fl :CommandTFlush<cr>
-nnoremap <silent> <leader>f :CommandT<esc>
-nnoremap <silent> <leader>b :CommandTBuffer<esc>
-nnoremap <silent> <leader>j :CommandTJump<esc>
-" ignore images
-set wildignore+=*/doc/*,app/assets/images,*.pdf,*.jpg,*.png,*.gif,*.tif,*.psd
-
-let g:CommandTMaxFiles=50000
-" ignore tmp files
-set wildignore+=tmp/*
-
-" Open routes.rb at the top of the screen
-map <leader>gr :topleft :split config/routes.rb<cr>
-
-" Quick access to rails folders
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>
-"}}}
